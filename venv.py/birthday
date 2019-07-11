@@ -1,0 +1,25 @@
+
+from datetime import datetime
+
+
+
+def daystobday(string, name):
+    year = int(input("When is your birthday [year]?"))
+    month = int(input("When is your birthday [month]?"))
+    days = int(input("When is your birthday [day]?"))     
+    birthday= (2000 + year, month,day)
+    return birthday 
+   
+    
+def calculate_dates(original_date, now):
+    delta1 = datetime(now.year, original_date.month, original_date.day)
+    delta2 = datetime(now.year+1, original_date.month, original_date.day)
+    days = (max(delta1, delta2) - now).days
+    return days
+    
+bd = daystobday()
+now = datetime.now()
+c = calculate_dates(bd, now)
+
+print(c) 
+   
